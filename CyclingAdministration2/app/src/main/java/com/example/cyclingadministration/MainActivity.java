@@ -1,8 +1,9 @@
 package com.example.cyclingadministration;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.firebase.FirebaseApp;
 import android.os.Bundle;
+import com.example.cyclingadministration.backend.Registration;
+import com.example.cyclingadministration.backend.Login;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,6 +11,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FirebaseApp.initializeApp(this);
+
     }
 }
