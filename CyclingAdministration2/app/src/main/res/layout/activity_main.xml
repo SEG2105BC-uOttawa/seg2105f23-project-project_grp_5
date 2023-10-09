@@ -27,8 +27,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/cycling" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/MainText"
@@ -53,7 +52,6 @@
             android:layout_marginEnd="25dp"
             android:layout_marginBottom="-870dp"
             android:backgroundTint="#2D4990"
-            android:onClick="onLogin"
             android:scaleX="2"
             android:scaleY="2"
             android:text="Log In"
@@ -69,7 +67,6 @@
             android:layout_marginEnd="25dp"
             android:layout_marginBottom="-1100dp"
             android:backgroundTint="#50B1DD"
-            android:onClick="onSignUp"
             android:scaleX="2"
             android:scaleY="2"
             android:text="Sign Up"
