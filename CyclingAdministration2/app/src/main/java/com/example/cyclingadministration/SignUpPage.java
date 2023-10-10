@@ -76,6 +76,9 @@ public class SignUpPage extends AppCompatActivity {
                     Registration newUser = new Registration();
                     newUser.addUser(username, password, role);
                     Intent i = new Intent(SignUpPage.this, WelcomePageTwo.class);
+                    i.putExtra("KEY_USERNAME", username);
+                    i.putExtra("KEY_ROLE", role);
+                    startActivity(i);
                     startActivity(i);
                 }
 

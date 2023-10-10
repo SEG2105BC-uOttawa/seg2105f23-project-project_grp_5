@@ -16,7 +16,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="102dp" />
+            android:layout_height="47dp" />
 
         <TextView
             android:id="@+id/textView"
@@ -31,7 +31,7 @@
         <TextView
             android:id="@+id/welcomingMessage"
             android:layout_width="match_parent"
-            android:layout_height="61dp"
+            android:layout_height="49dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/welcome_message"
@@ -41,6 +41,13 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="28dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="The username has to be 6-30 characters; can only contain a-z (small or cap), underscore, and 0-9; and has to start with alphabet" />
 
         <EditText
             android:id="@+id/username"
@@ -56,6 +63,13 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="25dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="The password must have 8 characters minimum; must contain 1 letter, 1 special character, 1 number, and 1 capital alphabet." />
 
         <EditText
             android:id="@+id/password"
