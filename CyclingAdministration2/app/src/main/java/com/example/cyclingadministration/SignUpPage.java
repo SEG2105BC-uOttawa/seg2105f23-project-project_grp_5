@@ -63,8 +63,6 @@ public class SignUpPage extends AppCompatActivity {
                 cpasswordt = findViewById(R.id.confirm_password);
                 cpassword = cpasswordt.getText().toString();
 
-
-
                 role = spinner.getSelectedItem().toString();
                 if (role.equals("Participant")) {
                     Toast.makeText(SignUpPage.this, "Participant Sign-Up Selected", Toast.LENGTH_SHORT).show();

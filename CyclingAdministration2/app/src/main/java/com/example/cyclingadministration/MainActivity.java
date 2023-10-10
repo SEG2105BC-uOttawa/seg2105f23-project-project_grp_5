@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.cyclingadministration.backend.Registration;
-import com.example.cyclingadministration.backend.Login;
 
 public class MainActivity extends AppCompatActivity {
 
