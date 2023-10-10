@@ -26,7 +26,7 @@ public class Login {
 
     public void getUser(String username, String password, LoginCallback callback){
 
-
+        Log.d(TAG, "getUser: "+ username + password);
         db.collection("User-Info")
                 .whereEqualTo("username", username)
                 .whereEqualTo("password", password)

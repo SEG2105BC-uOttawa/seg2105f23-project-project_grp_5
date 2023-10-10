@@ -31,7 +31,7 @@ public class LoginPage extends AppCompatActivity {
                 username = account.getText().toString();
 
                 pass = findViewById(R.id.user_pass);
-                password = account.getText().toString();
+                password = pass.getText().toString();
 
                 submitLogin = findViewById(R.id.LogInButton);
 
@@ -43,7 +43,7 @@ public class LoginPage extends AppCompatActivity {
                         if (success) {
                             Intent i = new Intent(LoginPage.this, WelcomePageTwo.class);
                             i.putExtra("KEY_USERNAME", username);
-                            i.putExtra("KEY_ROLE", login.getRole());
+                            i.putExtra("KEY_ROLE", role);
                             startActivity(i);
                             Log.d(TAG, "Role: " + role);
                         } else {
