@@ -1,4 +1,4 @@
-PROJECT DELIVERABLE 1 - SEG 2105
+PROJECT DELIVERABLE 1 - SEG 2105 - Link: https://github.com/SEG2105BC-uOttawa/seg2105f23-project-project_grp_5
 
 Student names and Student ID:
 
