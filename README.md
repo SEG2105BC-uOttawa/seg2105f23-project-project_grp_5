@@ -2,7 +2,7 @@
 
 Student names and Student ID: Link: https://github.com/SEG2105BC-uOttawa/seg2105f23-project-project_grp_5
 
-- Priya Dhaarmendra Kumar - 300297507
+- Priya Dharmendra Kumar - 300297507
 - Raiyan Aziz - 300294770
 - Wajdy Elsobky - 300317535
 - Pavel Karmaker - 300322337
