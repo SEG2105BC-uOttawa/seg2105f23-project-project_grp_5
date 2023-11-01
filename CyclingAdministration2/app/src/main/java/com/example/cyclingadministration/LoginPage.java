@@ -22,7 +22,7 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-
+        Log.d(TAG, "Role: " +  ((userState) this.getApplication()).getUserState());
         submitLogin = findViewById(R.id.loginButton);
         submitLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,13 +40,22 @@ public class LoginPage extends AppCompatActivity {
                     @Override
                     public void onResult(boolean success, String role) {
 
-                        if (success) {
-                            Intent i = new Intent(LoginPage.this, WelcomePageTwo.class);
-                            i.putExtra("KEY_USERNAME", username);
-                            i.putExtra("KEY_ROLE", role);
+                        if(success) {
+                            Intent i = null;
+                            ((userState) LoginPage.this.getApplication()).setUserState(true);
+                            Log.d(TAG, "Role: " + ((userState) LoginPage.this.getApplication()).getUserState());
+                            if (!role.equals("admin")) {
+                                i = new Intent(LoginPage.this, WelcomePageTwo.class);
+                                i.putExtra("KEY_USERNAME", username);
+                                i.putExtra("KEY_ROLE", role);
+                                startActivity(i);
+                                Log.d(TAG, "Role: " + role);
+                            } else if (success && role.equals("admin")) {
+                                i = new Intent(LoginPage.this, adminDashboard.class);
+                            }
                             startActivity(i);
                             Log.d(TAG, "Role: " + role);
-                        } else {
+                        }else {
                             account.setError("Username and password do not match!");
                             Log.d(TAG, "No matching data found.");
                         }

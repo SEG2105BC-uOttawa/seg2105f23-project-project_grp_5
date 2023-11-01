@@ -13,6 +13,7 @@ public class WelcomePageTwo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page_two);
 
+
         Intent intent = getIntent();
         String usernameText = intent.getStringExtra("KEY_USERNAME");
         String roleText = intent.getStringExtra("KEY_ROLE");

@@ -16,9 +16,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Registration {
-    private FirebaseAuth mAuth;
-// ...
-// Initialize Firebase Auth
+
+
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     // Create a new user with a first and last name
     public void addUser(String username, String password, String role) {

@@ -1,0 +1,15 @@
+package com.example.cyclingadministration;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class adminDashboard extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_admin_dashboard);
+        ((userState) this.getApplication()).setUserState(true);
+    }
+}
