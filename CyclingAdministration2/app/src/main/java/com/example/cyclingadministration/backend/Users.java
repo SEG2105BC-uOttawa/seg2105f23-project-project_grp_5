@@ -3,14 +3,15 @@ package com.example.cyclingadministration.backend;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import android.util.Log;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
 import org.checkerframework.checker.nullness.qual.NonNull;
 
-public class Login {
+public class Users {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private String role;
 
@@ -24,7 +25,7 @@ public class Login {
 
 
 
-    public void getUser(String username, String password, LoginCallback callback){
+    public void getUsers(String username, String password, Login.LoginCallback callback){
 
         Log.d(TAG, "getUser: "+ username + password);
         db.collection("User-Info")

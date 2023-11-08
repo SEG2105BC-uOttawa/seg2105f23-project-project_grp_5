@@ -1,4 +1,4 @@
 package com.example.cyclingadministration.backend;
 
-public class users {
+public class Events {
 }

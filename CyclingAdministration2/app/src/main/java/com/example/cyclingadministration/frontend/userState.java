@@ -1,4 +1,4 @@
-package com.example.cyclingadministration;
+package com.example.cyclingadministration.frontend;
 
 import android.app.Application;
 

@@ -1,10 +1,12 @@
-package com.example.cyclingadministration;
+package com.example.cyclingadministration.frontend;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.example.cyclingadministration.R;
 
 public class WelcomePageTwo extends AppCompatActivity {
     TextView username, role;

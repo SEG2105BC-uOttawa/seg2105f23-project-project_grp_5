@@ -1,8 +1,10 @@
-package com.example.cyclingadministration;
+package com.example.cyclingadministration.frontend;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.cyclingadministration.R;
 
 public class adminDashboard extends AppCompatActivity {
 

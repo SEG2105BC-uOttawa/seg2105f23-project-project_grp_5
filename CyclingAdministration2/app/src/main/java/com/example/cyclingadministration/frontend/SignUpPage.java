@@ -1,13 +1,11 @@
-package com.example.cyclingadministration;
+package com.example.cyclingadministration.frontend;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 import java.util.regex.*;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.cyclingadministration.R;
 import com.example.cyclingadministration.backend.Registration;
 public class SignUpPage extends AppCompatActivity {
     private String username, password, cpassword, role;

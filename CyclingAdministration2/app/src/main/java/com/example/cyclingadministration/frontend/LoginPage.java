@@ -1,4 +1,4 @@
-package com.example.cyclingadministration;
+package com.example.cyclingadministration.frontend;
 
 import androidx.appcompat.app.AppCompatActivity;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.cyclingadministration.R;
 import com.example.cyclingadministration.backend.Login;
 import com.google.android.material.textfield.TextInputEditText;
 
