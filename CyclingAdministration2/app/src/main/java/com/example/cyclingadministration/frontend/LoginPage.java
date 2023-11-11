@@ -23,7 +23,7 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-        Log.d(TAG, "Role: " +  ((userState) this.getApplication()).getUserState());
+        Log.d(TAG, "Role: " +  ((UserState) this.getApplication()).getUserState());
         submitLogin = findViewById(R.id.loginButton);
         submitLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,8 +43,8 @@ public class LoginPage extends AppCompatActivity {
 
                         if(success) {
                             Intent i = null;
-                            ((userState) LoginPage.this.getApplication()).setUserState(true);
-                            Log.d(TAG, "Role: " + ((userState) LoginPage.this.getApplication()).getUserState());
+                            ((UserState) LoginPage.this.getApplication()).setUserState(true);
+                            Log.d(TAG, "Role: " + ((UserState) LoginPage.this.getApplication()).getUserState());
                             if (!role.equals("admin")) {
                                 i = new Intent(LoginPage.this, WelcomePageTwo.class);
                                 i.putExtra("KEY_USERNAME", username);
@@ -52,7 +52,7 @@ public class LoginPage extends AppCompatActivity {
                                 startActivity(i);
                                 Log.d(TAG, "Role: " + role);
                             } else if (success && role.equals("admin")) {
-                                i = new Intent(LoginPage.this, adminDashboard.class);
+                                i = new Intent(LoginPage.this, AdminDashboard.class);
                             }
                             startActivity(i);
                             Log.d(TAG, "Role: " + role);

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".frontend.userState"
+        android:name=".frontend.UserState"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,7 +14,25 @@
         android:theme="@style/Theme.CyclingAdministration"
         tools:targetApi="31">
         <activity
-            android:name=".frontend.adminDashboard"
+            android:name=".misc.fieldLayout"
+            android:exported="false" />
+        <activity
+            android:name=".misc.CustomAdapter2"
+            android:exported="false" />
+        <activity
+            android:name=".misc.CustomAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.UserList"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.EventList"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.CreateEventType"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.AdminDashboard"
             android:exported="false" />
         <activity
             android:name=".frontend.LoginPage"

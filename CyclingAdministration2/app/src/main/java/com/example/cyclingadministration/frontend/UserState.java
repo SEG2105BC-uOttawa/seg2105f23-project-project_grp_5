@@ -2,7 +2,7 @@ package com.example.cyclingadministration.frontend;
 
 import android.app.Application;
 
-public class userState extends Application {
+public class UserState extends Application {
 
     private boolean userState = false;
 
