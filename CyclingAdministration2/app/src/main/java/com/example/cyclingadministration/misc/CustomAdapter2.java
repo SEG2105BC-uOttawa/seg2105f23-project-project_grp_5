@@ -1,9 +1,16 @@
 package com.example.cyclingadministration.misc;
 
 import com.example.cyclingadministration.R;
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 import com.example.cyclingadministration.backend.Events;
+import com.example.cyclingadministration.frontend.EventList;
+import com.example.cyclingadministration.frontend.LoginPage;
+import com.example.cyclingadministration.frontend.WelcomePageTwo;
+import com.example.cyclingadministration.frontend.editEventTypes;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,11 +58,17 @@ public class CustomAdapter2 extends ArrayAdapter<String> {
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Handle delete button click
-                Toast.makeText(getContext(), "Edit button clicked for item: " + item, Toast.LENGTH_SHORT).show();
-                // Implement your delete logic here
+                Context context = getContext();
+                if (context instanceof EventList) {
+                    // Cast the context to EventList and call the toEdit method
+                    ((EventList) context).toEdit(textView.getText().toString());
+                } else {
+                    // Handle the case where the context is not an instance of EventList
+                    Log.e(TAG, "Invalid context type");
+                }
             }
         });
+
 
 
 

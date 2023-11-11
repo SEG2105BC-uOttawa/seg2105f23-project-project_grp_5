@@ -7,13 +7,16 @@ android {
     namespace = "com.example.cyclingadministration"
     compileSdk = 34
 
+
+
+
     defaultConfig {
         applicationId = "com.example.cyclingadministration"
         minSdk = 19
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
-
+        multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -39,7 +42,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.firebase:firebase-firestore:24.9.1")
     implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
-
+    //implementation("com.android.support:multidex:1.0.3")
     // Add the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-auth")

@@ -2,6 +2,7 @@ package com.example.cyclingadministration.frontend;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
@@ -20,6 +21,13 @@ import java.util.Map;
 public class EventList extends AppCompatActivity {
 
     private List<String> itemList;
+
+    public void toEdit(String typeName){
+        Intent i = new Intent(EventList.this, editEventTypes.class);
+        i.putExtra("KEY_TYPENAME", typeName);
+        startActivity(i);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -78,7 +78,7 @@ public class SignUpPage extends AppCompatActivity {
                     Intent i = new Intent(SignUpPage.this, WelcomePageTwo.class);
                     i.putExtra("KEY_USERNAME", username);
                     i.putExtra("KEY_ROLE", role);
-                    startActivity(i);
+                    ((UserState) SignUpPage.this.getApplication()).setUserState(true);
                     startActivity(i);
                 }
 

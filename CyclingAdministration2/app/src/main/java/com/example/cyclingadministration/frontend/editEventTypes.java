@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CreateEventType extends AppCompatActivity {
+public class editEventTypes extends AppCompatActivity {
 
 
     private LinearLayout formContainer;
@@ -45,7 +45,15 @@ public class CreateEventType extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_event_type);
+        setContentView(R.layout.activity_edit_event_types);
+
+        Intent intent = getIntent();
+        String type = intent.getStringExtra("KEY_TYPENAME");
+
+
+        typeNamet = findViewById(R.id.eventNameEditText);
+        typeNamet.setText(type);
+
         formContainer = findViewById(R.id.formContainer);
         Button addFieldButton = findViewById(R.id.addFieldButton);
         submitButton = findViewById(R.id.createEventButt);
@@ -121,9 +129,12 @@ public class CreateEventType extends AppCompatActivity {
                 collectUserInput();
                 Log.d(TAG, values.toString());
                 Events event = new Events();
+                event.deleteEventType(type);
                 event.addEventType(values);
                 Intent intent = new Intent(getApplicationContext(), AdminDashboard.class);
                 startActivity(intent);
+
+
             }
         });
     }
