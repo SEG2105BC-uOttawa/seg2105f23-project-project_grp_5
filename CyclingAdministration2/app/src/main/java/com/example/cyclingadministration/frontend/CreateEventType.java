@@ -71,9 +71,9 @@ public class CreateEventType extends AppCompatActivity {
 
         difficulty = findViewById(R.id.intensitySpinner);
         String[] items2 = {"Easy", "Medium", "Hard"};
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items2);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        difficulty.setAdapter(adapter);
+        difficulty.setAdapter(adapter2);
 
 
         difficulty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
