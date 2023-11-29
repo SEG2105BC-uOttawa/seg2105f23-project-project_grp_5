@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cycling-mobile-application",
+  "private_key_id": "aa23d4243c24faf2e178e5d8adbccf4df9bb42af",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDx1NN1MZGdV66P\nLvvIVnqT90tBmB4dEF4rxYEkq/LJ0U1uqOrwPhBR8hcLDq9ISXBndFrV+S3GnXHU\nXyveNylNdwLnb1mmcpN3l8TCrorlhI2B4pcfHBgzMas2ScC4N8HH1aC4CbK8pTJ4\nnmIhfYkA3INB6uaT8ZO9Lpzp8kLGqBOxaQT/Ks84juaDEI8Ifv6wetZZ/r2+BSq/\nQLU5Pz1VlH7aoUZWUHoVFD/p6B8NJuhATX8chXIb6GNWyMmSqOSsq/2DNisd9dP8\nw4e+NLeQFWkP/4Lpq+tSHVJ9Op/z/GaLZnrq2+fu9wk1EfMlEuGPi6VOQYl0Z1JB\nIv3xMsRtAgMBAAECggEAAJ2IN53KJwgFyzXzX7zaI7KxHcvKsJFX2+M9lBRGTalv\nyis0Kwpfygr2py0K9/RT8VDvi1niu+Xl/lwkowppiRmw7vqr4NmoFlXh7+1tBDYy\nW45NcXEHlNINqAOLPqXm35EnSbTxAsU79QIWkP5g6yWp/FNrOsVF3NFTMnMO3zoe\nRGW22aL/rV+LS1SkIUAL2Rl86Attpabdd4ijqY6J9QyONmhgCZ0Wr8b+/dS5ViZC\n0uVLF3WMFStbwFTGVWshww5IMm8/NYGMRNvDrBUlgztHFEtb8kWxThAFneQGgtrI\nr4jXL9vZzMwACJwQs1qmPhvU0CRu+LdExJZp7qe32QKBgQD8Ss8McJZCpfsnO6lk\niMlAdTg7NaAKv+tLhZGJF2wykuDE4c03lddTty80LJZXm+25D8Ib05Ejw9DcWyK0\n6St9SGdNy8X2ughx8sXu4C8aXyPzpE+nHdwm5zraYiSKpQE0wdgnhMoL2SxAyGJN\nkeBfAKHzorXGqzxcMgcMA/PieQKBgQD1YqkeE+T/96yy2bh0lLCPMq9nECm1Afxk\nJRfnujmhjENfSDN13382jz3r0qIxCD+HvmIoLgT8PuAGCiMt/ZyH2yYzCnmDSjyR\nFH+uyn9VOoUFI1i732areaKbl09RVCRwErfROR8BFavbzoG1qfMgV91ea6ARl57+\n65Pky2KUlQKBgAWwkjbPmzPpll5uJAXWZ+OCQUBklzVm2qGbY4rZ8mC5m0QVa5Fj\nWbXTncbpcoKLS7Muvcvu24kY827kx0WZNJfguCOzAsXrsCERvpECkU1g8+icvgcg\nz0Q5VsRyDizqR7qu3HcXsY7O2Qak/kKNlafO1dguxTazyeqyXiJRPIDRAoGAJw1i\nmNTVtx71rykTQAqB5uhMHfzmhlYgkteMbGao0Vr/ReS5u+Kr3kUBt8w339HOOo5E\nFNzuEi73fD6Uxrb7+GsaMzlRiWGBLh2zDGBRz4CWtvCfKJcvQc8D3/s+tlTLz8JK\n2tNaadPHHB5Lalv3w4f4RRSfzuzwcuWPDfSIZdkCgYEA6NcG3OCcRIXRp/cU/z0X\nLKImyGwMKpui3/Weoq1xcQgydjSf7JgBXnHNHeUpOoavNwYjYsOH4JsmE977yHKl\n0cUQLQtHmo/aZ+r6AI50NYe/zOgCkPw9lvA6KezPg5EON8FXo6WqrU/gMGqpnGlz\ndqhCMRQgPmFh+XLIy6wQZ+o=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-tnvtw@cycling-mobile-application.iam.gserviceaccount.com",
+  "client_id": "116095861216273366466",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-tnvtw%40cycling-mobile-application.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

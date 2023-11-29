@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cycling Administration</string>
+    <string name="welcome_message_2" />
+    <string name="welcome_message" />
+    <string name="username_hint" />
+    <string name="password_hint" />
+    <string name="confirm_password" />
+    <string name="button_text" />
+</resources>

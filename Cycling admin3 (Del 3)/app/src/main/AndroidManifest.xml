@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name=".frontend.UserState"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CyclingAdministration"
+        tools:targetApi="31">
+        <activity
+            android:name=".frontend.CreateEventPage"
+            android:exported="false" />
+        <activity
+            android:name=".misc.CustomAdapter3"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.CompleteProfile"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.editEventTypes"
+            android:exported="false" />
+        <activity
+            android:name=".misc.fieldLayout"
+            android:exported="false" />
+        <activity
+            android:name=".misc.CustomAdapter2"
+            android:exported="false" />
+        <activity
+            android:name=".misc.CustomAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.UserList"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.EventList"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.CreateEventType"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.AdminDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.LoginPage"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.SignUpPage"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.WelcomePageTwo"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.clubowner_main"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.ManageEventsClubowner"
+            android:exported="false" />
+        <activity
+            android:name=".frontend.MainActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

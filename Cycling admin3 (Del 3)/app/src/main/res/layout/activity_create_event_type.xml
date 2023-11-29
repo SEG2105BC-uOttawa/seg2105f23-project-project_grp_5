@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D5F2E8"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/bottom_rounded_background"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Create Event Type"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:id="@+id/eventNameLayout"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10sp"
+        android:background="@drawable/buttoncolors"
+        android:orientation="horizontal"
+        android:padding="10sp">
+
+        <TextView
+            android:id="@+id/eventNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Name:"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/eventNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10sp"
+        android:background="@drawable/buttoncolors"
+        android:orientation="horizontal"
+        android:padding="10sp">
+
+        <TextView
+            android:id="@+id/activityTypeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttoncolors"
+            android:text="Activity Type:"
+            android:textColor="@color/white" />
+
+        <Spinner
+            android:id="@+id/activityTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:background="@android:color/white"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/intensityLayout"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10sp"
+        android:background="@drawable/buttoncolors"
+        android:orientation="horizontal"
+        android:padding="10sp">
+
+        <TextView
+            android:id="@+id/intensityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Intensity:"
+            android:textColor="@color/white" />
+
+        <Spinner
+            android:id="@+id/intensitySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@android:color/white"
+
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/eventTypeLayout"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10sp"
+        android:background="@drawable/buttoncolors"
+        android:orientation="horizontal"
+        android:padding="10sp">
+
+        <TextView
+            android:id="@+id/eventTypeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max People"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/eventNameEditText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/errorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text=""
+        android:textColor="#FF0000"
+        android:visibility="gone"
+        tools:ignore="NotSibling" />
+
+    <LinearLayout
+        android:id="@+id/formContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addFieldButton"
+        style="@android:style/Widget.Material.Light.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:text="Add Additional Field" />
+
+    <Button
+        android:id="@+id/createEventButt"
+        style="@android:style/Widget.Material.Light.Button"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="Create Event Type"
+        android:textAlignment="center"
+        android:translationX="130dp" />
+</LinearLayout>
