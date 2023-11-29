@@ -16,3 +16,8 @@ Description of deliverable 2:
 
 This deliverable focuses on implementing different features for our app. We made sure that users with admin privileges could manage, add, edit, and delete event types while being able to edit each of these event details, such as age, pace, and level.
 In addition, the admin account has the capability to remove both cycling club and participant accounts. We respected the project intructions and also added the UML.
+
+Description of deliverable 3:
+
+This deliverable focuses on implementing the club owner functionalities. The Club owner is able to complete club profile and create events that the admin had predefined in the last deliverable. 
+
