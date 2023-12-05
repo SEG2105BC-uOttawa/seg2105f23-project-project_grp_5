@@ -10,6 +10,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -17,6 +19,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -108,6 +111,7 @@ public class Events {
 
 
     public void getAllEvents(EventCallback callback) {
+        Log.d(TAG, "helo");
         eventRef
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -133,7 +137,7 @@ public class Events {
         void onResult(boolean success, List<String> events);
     }
 
-    public void addEvent(Map<String, String> values){
+    public void addEvent(Map<String, Object> values) {
         Log.d(TAG, values.toString());
         eventRef
                 .add(values)
@@ -150,6 +154,7 @@ public class Events {
                     }
                 });
     }
+
 
     public void getAllEventType(EventTypeCallback callback, String name) {
         eventTypesRef.whereEqualTo("Event Type Name", name)
@@ -174,5 +179,134 @@ public class Events {
     public interface EventTypeCallback {
         void onResult(boolean success, List<Map<String, Object>> eventTypes);
     }
+
+    public void getEventDetails(String user, final Callback callback) {
+        eventRef.whereEqualTo("Event Name", user).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    Map<String, Object> allFields = new HashMap<>();
+
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        // Get all fields as a Map
+                        allFields.putAll(document.getData());
+                    }
+
+                    // Invoke the callback with the result
+                    callback.onResult(true, allFields);
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+    }
+
+    // Define a callback interface
+    public interface Callback {
+        void onResult(boolean success, Map<String, Object> result);
+    }
+
+    public void updateArray(String fieldValue, String newItem) {
+        // Assuming you have a reference to your Firestore database
+        CollectionReference collectionReference = db.collection("Events");
+
+        // Create a query to find the document based on the field value
+        collectionReference.whereEqualTo("Event Name", fieldValue)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            // Get the document reference
+                            DocumentReference documentRef = collectionReference.document(document.getId());
+
+                            // Update the array using array union
+                            documentRef.update("Participants", FieldValue.arrayUnion(newItem))
+                                    .addOnSuccessListener(aVoid -> {
+                                        // Array updated successfully
+                                        Log.d(TAG, "Array updated successfully!");
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        // Handle failure
+                                        Log.w(TAG, "Error updating array", e);
+                                    });
+                        }
+                    } else {
+                        // Handle failure to fetch the document
+                        Log.w(TAG, "Error getting documents.", task.getException());
+                    }
+                });
+    }
+
+    public interface ValueExistsCallback {
+        void onValueExists(boolean exists);
+    }
+
+    public void valueExists(String eventname, String fieldName, String desiredValue, final ValueExistsCallback callback) {
+        eventRef.whereEqualTo("Event Name", eventname)
+                .whereArrayContains(fieldName, desiredValue)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            boolean exists = !task.getResult().isEmpty();
+                            callback.onValueExists(exists);
+                        } else {
+                            callback.onValueExists(false);
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+    }
+
+    public void addUserfeedback(String feedback, String eventname, String whichOne, String username){
+        eventRef.whereEqualTo("Event Name", eventname)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                // Update the document based on the found document ID
+                                String documentId = document.getId();
+                                DocumentReference documentRef = eventRef.document(documentId);
+
+                                // Create a map with the fields you want to update
+                                Map<String, Object> updateMap = new HashMap<>();
+                                Map<String, Object> updateMap2 = new HashMap<>();
+                                updateMap.put(whichOne, updateMap2.put(username, feedback));
+                                // Add other fields as needed
+
+                                // Update the document with the new values
+                                documentRef.update(updateMap)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                // Document successfully updated
+                                                Log.d(TAG, "Document updated successfully!");
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                // Handle errors
+                                                Log.w(TAG, "Error updating document", e);
+                                            }
+                                        });
+                            }
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
+    }
+
+
+
+
+
+
+
+
 
 }

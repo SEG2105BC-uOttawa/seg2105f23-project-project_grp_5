@@ -1,8 +1,11 @@
 package com.example.cyclingadministration.frontend;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +22,7 @@ public class clubowner_main extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clubowner_main);
+        Log.d(TAG, "username: " + ((UserState) clubowner_main.this.getApplication()).getUsernameForUser());
 
         toCreateEvent = findViewById(R.id.createEvents);
         toCompleteProfile = findViewById(R.id.ComProfile);
@@ -44,7 +48,7 @@ public class clubowner_main extends Activity {
         toCompleteProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((UserState) clubowner_main.this.getApplication()).reset();
+
                 Intent intent = new Intent(getApplicationContext(), CompleteProfile.class);
                 startActivity(intent);
             }
@@ -53,7 +57,7 @@ public class clubowner_main extends Activity {
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                ((UserState) clubowner_main.this.getApplication()).reset();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }

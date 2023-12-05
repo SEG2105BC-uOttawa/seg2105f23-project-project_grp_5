@@ -29,9 +29,11 @@ public class CreateEventPage extends AppCompatActivity {
 
     private List<String> items;
     private List<String> itemList;
+
+    private String selectedValue;
     Spinner spinner;
 
-    EditText evName, date, maxpple;
+    EditText evName, date, maxpple,desc;
     Button submit;
 
 
@@ -74,7 +76,7 @@ public class CreateEventPage extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String selectedValue = parentView.getItemAtPosition(position).toString();
+                 selectedValue = parentView.getItemAtPosition(position).toString();
 
             }
 
@@ -93,11 +95,22 @@ public class CreateEventPage extends AppCompatActivity {
                 String date2 = date.getText().toString();
                 maxpple= findViewById(R.id.editTextText4);
                 String max = maxpple.getText().toString();
+                desc= findViewById(R.id.editTextText6);
+                String des = maxpple.getText().toString();
+                List<String> participantsList = new ArrayList<>();
+                Map<String, Object> val = new HashMap<>();
+                Map<String, Object> val2 = new HashMap<>();
+                Map<String, Object> val3 = new HashMap<>();
+                val.put("Event Name", name);
+                val.put("Event Type", selectedValue);
+                val.put("Date", date2);
+                val.put("Description", des);
+                val.put("Max People", max);
+                val.put("Created by", ((UserState) CreateEventPage.this.getApplication()).getUsernameForUser());
+                val.put("Participants", participantsList);
+                val.put("User Ratings", val2);
+                val.put("User Comments", val3);
 
-                Map<String, String> val = new HashMap<>();
-                val.put("Name", name);
-                val.put("Name", date2);
-                val.put("Name", max);
 
                 Events evnt = new Events();
                 evnt.addEvent(val);

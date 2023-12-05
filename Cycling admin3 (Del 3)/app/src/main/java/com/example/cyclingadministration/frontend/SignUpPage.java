@@ -1,11 +1,14 @@
 package com.example.cyclingadministration.frontend;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.regex.*;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -33,7 +36,7 @@ public class SignUpPage extends AppCompatActivity {
         submit = findViewById(R.id.sign_up_button);
 
         spinner = findViewById(R.id.spinner);
-        String[] items = {"Participant", "Club Representative"};
+        String[] items = {"Participant", "Club Representative", "Admin"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -74,12 +77,19 @@ public class SignUpPage extends AppCompatActivity {
                 isAllFieldsChecked = validateFields();
 
                 if (isAllFieldsChecked){
+
                     Users newUser = new Users();
                     newUser.addUser(username, password, role);
-                    Intent i = new Intent(SignUpPage.this, WelcomePageTwo.class);
-                    i.putExtra("KEY_USERNAME", username);
-                    i.putExtra("KEY_ROLE", role);
+                    Intent i = null;
                     ((UserState) SignUpPage.this.getApplication()).setUserState(true);
+                    ((UserState) SignUpPage.this.getApplication()).setRoleForUser(role);
+                    ((UserState) SignUpPage.this.getApplication()).setUsernameForUser(username);
+                    ((UserState) SignUpPage.this.getApplication()).setPasswordForUser(password);
+                    if (role.equals("Participant")) {
+                        i = new Intent(SignUpPage.this, ParticipantMain.class);
+                    } else if(role.equals("Club Representative")){
+                        i = new Intent(SignUpPage.this, clubowner_main.class);
+                    }
                     startActivity(i);
                 }
 

@@ -199,14 +199,14 @@
             android:padding="10dp">
             <!-- Left Icon -->
             <ImageView
-                android:id="@+id/bicycle"
+                android:id="@+id/bicycle2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/bicycle" />
 
             <!-- Text (Centered) -->
             <TextView
-                android:id="@+id/create_event"
+                android:id="@+id/Inbox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -217,7 +217,7 @@
 
             <!-- Right Icon -->
             <ImageView
-                android:id="@+id/right_arrow3"
+                android:id="@+id/right_arrow4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/arrowrighline" />
@@ -230,12 +230,13 @@
 
     <Button
         android:id="@+id/log_out_button"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/black"
         android:text="log out"
-        android:textSize="30sp"
+        android:textSize="24sp"
         app:backgroundTint="@color/black" />
 
 </LinearLayout>

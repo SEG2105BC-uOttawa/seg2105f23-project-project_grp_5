@@ -31,6 +31,7 @@ public class LoginPage extends AppCompatActivity {
                 account = findViewById(R.id.user_account);
                 username = account.getText().toString();
 
+
                 pass = findViewById(R.id.user_pass);
                 password = pass.getText().toString();
 
@@ -43,16 +44,16 @@ public class LoginPage extends AppCompatActivity {
 
                         if(success) {
                             Intent i = null;
+                            Log.d(TAG, "Role: " + username);
                             ((UserState) LoginPage.this.getApplication()).setUserState(true);
                             ((UserState) LoginPage.this.getApplication()).setRoleForUser(role);
                             ((UserState) LoginPage.this.getApplication()).setIsCompleteForUser(Boolean.parseBoolean(isComplete));
                             ((UserState) LoginPage.this.getApplication()).setUsernameForUser(username);
                             ((UserState) LoginPage.this.getApplication()).setPasswordForUser(password);
                             Log.d(TAG, "Role: " + ((UserState) LoginPage.this.getApplication()).getUserState());
+                            Log.d(TAG, "username: " + ((UserState) LoginPage.this.getApplication()).getUsernameForUser());
                             if (success && role.equals("Participant")) {
-                                i = new Intent(LoginPage.this, WelcomePageTwo.class);
-                                i.putExtra("KEY_USERNAME", username);
-                                i.putExtra("KEY_ROLE", role);
+                                i = new Intent(LoginPage.this, ParticipantMain.class);
                                 startActivity(i);
                                 Log.d(TAG, "Role: " + role);
                             } else if(success && role.equals("Club Representative")){

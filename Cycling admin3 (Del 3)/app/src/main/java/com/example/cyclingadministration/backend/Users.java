@@ -162,6 +162,7 @@ public class Users {
 
     public void updateUser(String username, String password, String name, String phone, String social) {
         // Assuming you have a reference to your Firestore database
+        Log.d(TAG, username);
 
         // Query for the document based on username and password
         CollectionReference userCollection = db.collection("User-Info");
@@ -170,10 +171,16 @@ public class Users {
         query.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                Log.d(TAG, "hello2");
+                Log.d(TAG, String.valueOf(task.isSuccessful()));
+
                 if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot document : task.getResult()) {
+                    Log.d(TAG, "hello3");
+                    QuerySnapshot snapshot = task.getResult();
+
+                    if (snapshot != null && !snapshot.isEmpty()) {
                         // Retrieve the document reference
-                        DocumentReference documentRef = userCollection.document(document.getId());
+                        DocumentReference documentRef = userCollection.document(snapshot.getDocuments().get(0).getId());
 
                         // Create a map with the new fields
                         Map<String, Object> updates = new HashMap<>();
@@ -181,6 +188,7 @@ public class Users {
                         updates.put("phone", phone);
                         updates.put("social", social);
                         updates.put("isProfileComplete", "true");
+                        Log.d(TAG, updates.toString());
 
                         // Update the document with the new fields
                         documentRef.update(updates)
@@ -196,6 +204,8 @@ public class Users {
                                         Log.w(TAG, "Error updating document", e);
                                     }
                                 });
+                    } else {
+                        Log.d(TAG, "No matching documents found.");
                     }
                 } else {
                     Log.w(TAG, "Error getting documents.", task.getException());

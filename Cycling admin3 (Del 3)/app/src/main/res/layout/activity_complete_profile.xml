@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@id/CompleteProfile" />
 
     <EditText
-        android:id="@+id/PhoneNumber"
+        android:id="@+id/age"
         android:layout_width="350sp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@id/Name" />
 
     <EditText
-        android:id="@+id/socialMediaLink"
+        android:id="@+id/skillLevel"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/PhoneNumber" />
+        app:layout_constraintTop_toBottomOf="@id/age" />
 
     <Button
         android:id="@+id/createEvents"
@@ -76,6 +76,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/socialMediaLink" />
+        app:layout_constraintTop_toBottomOf="@id/skillLevel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
