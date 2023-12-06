@@ -2,8 +2,10 @@ package com.example.cyclingadministration.misc;
 
 import com.example.cyclingadministration.R;
 import com.example.cyclingadministration.backend.Users;
+import com.example.cyclingadministration.frontend.AdminDashboard;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +41,8 @@ public class CustomAdapter extends ArrayAdapter<String> {
                 // Handle button click
                 Users users = new Users();
                 users.deleteUser(textView.getText().toString());
+                Intent intent = new Intent(getContext(), AdminDashboard.class);
+                getContext().startActivity(intent);
             }
         });
 

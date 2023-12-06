@@ -3,9 +3,12 @@ package com.example.cyclingadministration.misc;
 import com.example.cyclingadministration.R;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 import com.example.cyclingadministration.backend.Events;
+import com.example.cyclingadministration.frontend.AdminDashboard;
 import com.example.cyclingadministration.frontend.EventList;
+import com.example.cyclingadministration.frontend.ViewEvent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +49,8 @@ public class CustomAdapter2 extends ArrayAdapter<String> {
             public void onClick(View view) {
                Events events = new Events();
                 events.deleteEventType(textView.getText().toString());
+                Intent intent = new Intent(getContext(), AdminDashboard.class);
+                getContext().startActivity(intent);
             }
         });
 
