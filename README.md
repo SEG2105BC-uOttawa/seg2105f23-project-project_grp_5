@@ -21,3 +21,8 @@ Description of deliverable 3:
 
 This deliverable focuses on implementing the club owner functionalities. The Club owner is able to complete club profile and create events that the admin had predefined in the last deliverable. 
 
+Description of deliverable 4:
+
+Our team successfully implemented the participant-related functionality in the Cycling Event Finder App. This deliverable focuses on the participants to search for cycling clubs, types of
+events or specific events. The application should be displaying a list of cycling clubs organizing the desired events at the end if all works correctly.
+
