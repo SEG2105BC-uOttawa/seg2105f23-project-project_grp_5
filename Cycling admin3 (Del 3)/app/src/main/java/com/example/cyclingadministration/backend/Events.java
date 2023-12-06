@@ -110,7 +110,7 @@ public class Events {
     }
 
 
-    public void getAllEvents(EventCallback callback) {
+    public void getAllEvents1( EventCallback callback1) {
         Log.d(TAG, "helo");
         eventRef
                 .get()
@@ -120,7 +120,36 @@ public class Events {
                         if (task.isSuccessful()) {
                             List<String> events = new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                events.add(document.getData().get("Event Name").toString());
+
+                                events.add(document.getData().get("Event Name").toString());}
+
+                            callback1.onResult(true, events);
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                            callback1.onResult(false, null);
+                        }
+                    }
+                });
+    }
+
+
+
+    public interface EventCallback1 {
+        void onResult(boolean success, List<String> events);
+    }
+
+    public void getAllEvents(String creator, EventCallback callback) {
+        Log.d(TAG, "helo");
+        eventRef
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<String> events = new ArrayList<>();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                if (document.getData().get("Created by").equals(creator)){
+                                    events.add(document.getData().get("Event Name").toString());}
                             }
                             callback.onResult(true, events);
                         } else {
@@ -302,7 +331,67 @@ public class Events {
     }
 
 
+    public void updateEvent(String fieldValue,  Map<String, Object> val) {
+        // Assuming you have a reference to your Firestore database
+        CollectionReference collectionReference = db.collection("Events");
 
+        // Create a query to find the document based on the field value
+        collectionReference.whereEqualTo("Event Name", fieldValue)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            // Get the document reference
+                            DocumentReference documentRef = collectionReference.document(document.getId());
+
+                            // Update the array using array union
+                            documentRef.update(val)
+                                    .addOnSuccessListener(aVoid -> {
+                                        // Array updated successfully
+                                        Log.d(TAG, "Array updated successfully!");
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        // Handle failure
+                                        Log.w(TAG, "Error updating array", e);
+                                    });
+                        }
+                    } else {
+                        // Handle failure to fetch the document
+                        Log.w(TAG, "Error getting documents.", task.getException());
+                    }
+                });
+    }
+
+    public void deleteEvent(String fieldValue) {
+        // Assuming you have a reference to your Firestore database
+        CollectionReference collectionReference = db.collection("Events");
+
+        // Create a query to find the document based on the field value
+        collectionReference.whereEqualTo("Event Name", fieldValue)
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            // Get the document reference
+                            DocumentReference documentRef = collectionReference.document(document.getId());
+
+                            // Update the array using array union
+                            documentRef.delete()
+                                    .addOnSuccessListener(aVoid -> {
+                                        // Array updated successfully
+                                        Log.d(TAG, "Array updated successfully!");
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        // Handle failure
+                                        Log.w(TAG, "Error updating array", e);
+                                    });
+                        }
+                    } else {
+                        // Handle failure to fetch the document
+                        Log.w(TAG, "Error getting documents.", task.getException());
+                    }
+                });
+    }
 
 
 

@@ -27,7 +27,7 @@ public class BrowseEvents extends AppCompatActivity {
 
         Events allEvents = new Events();
 
-        allEvents.getAllEvents(new Events.EventCallback() {
+        allEvents.getAllEvents1(new Events.EventCallback() {
             @Override
             public void onResult(boolean success, List<String> events) {
                 if (success) {

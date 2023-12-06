@@ -13,7 +13,6 @@ import android.widget.ListView;
 
 import com.example.cyclingadministration.R;
 import com.example.cyclingadministration.backend.Events;
-import com.example.cyclingadministration.misc.CustomAdapter2;
 import com.example.cyclingadministration.misc.CustomAdapter3;
 
 import java.util.ArrayList;
@@ -37,14 +36,14 @@ public class ManageEventsClubowner extends AppCompatActivity {
 
         Events allEvents = new Events();
 
-        allEvents.getAllEvents(new Events.EventCallback() {
+        allEvents.getAllEvents(((UserState) ManageEventsClubowner.this.getApplication()).getUsernameForUser(), new Events.EventCallback() {
             @Override
             public void onResult(boolean success, List<String> events) {
                 if (success) {
                     itemList = events;
                     // Set up the ListView with the updated custom adapter
                     CustomAdapter3 adapter = new CustomAdapter3(ManageEventsClubowner.this, itemList);
-                    ListView listView = findViewById(R.id.Create_events);
+                    ListView listView = findViewById(R.id.allusers);
                     listView.setAdapter(adapter);
                     Log.d(TAG, itemList.toString());
                 } else {

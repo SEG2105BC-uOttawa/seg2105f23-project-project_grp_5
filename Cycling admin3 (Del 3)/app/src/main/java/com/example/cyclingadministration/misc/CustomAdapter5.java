@@ -2,6 +2,7 @@ package com.example.cyclingadministration.misc;
 
 import com.example.cyclingadministration.R;
 import com.example.cyclingadministration.backend.Events;
+import com.example.cyclingadministration.frontend.EventDetails;
 import com.example.cyclingadministration.frontend.ViewEvent;
 
 import android.content.Context;
@@ -17,9 +18,9 @@ import androidx.annotation.NonNull;
 
 import java.util.List;
 
-public class CustomAdapter3 extends ArrayAdapter<String> {
+public class CustomAdapter5 extends ArrayAdapter<String> {
 
-    public CustomAdapter3(Context context, List<String> items) {
+    public CustomAdapter5(Context context, List<String> items) {
         super(context, 0, items);
     }
 
@@ -29,7 +30,7 @@ public class CustomAdapter3 extends ArrayAdapter<String> {
         final String item = getItem(position);
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_custom_adapter3, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_custom_adapter5, parent, false);
         }
 
         TextView textView = convertView.findViewById(R.id.evname);

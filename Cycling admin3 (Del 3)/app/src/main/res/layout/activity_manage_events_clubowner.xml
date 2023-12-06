@@ -31,14 +31,14 @@
         android:layout_marginBottom="4dp"
         android:text="List of events"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/Create_events"
-        app:layout_constraintEnd_toStartOf="@+id/Create_events"
+        app:layout_constraintBottom_toTopOf="@+id/allusers"
+        app:layout_constraintEnd_toStartOf="@+id/allusers"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/manage_events_welcome" />
 
     <ListView
-        android:id="@+id/Create_events"
+        android:id="@+id/allusers"
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_marginStart="30dp"
@@ -64,7 +64,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Create_events" />
+        app:layout_constraintTop_toBottomOf="@+id/allusers" />
 
     <!-- RecyclerView for adding events -->
 
